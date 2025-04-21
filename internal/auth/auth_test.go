@@ -10,7 +10,7 @@ func TestApiKey( t *testing.T) {
 	custom_header := http.Header{}
 	custom_header.Add("Authorization", "ApiKey somerandomjunk")
 	want := "somerandomjunk"
-	key, err := auth.GetAPIKey(custom_header)
+	key, err := GetAPIKey(custom_header)
 	if err != nil {
 		t.Errorf("%v", err)
 	}
@@ -22,7 +22,7 @@ func TestApiKey( t *testing.T) {
 func TestFaultyApiKey( t *testing.T) {
 	custom_header := http.Header{}
 	custom_header.Add("Authorization", "Bearer somerandomjunk")
-	_, err := auth.GetAPIKey(custom_header)
+	_, err := GetAPIKey(custom_header)
 	if err == nil {
 		t.Errorf("%v", err)
 	}
