@@ -24,7 +24,7 @@ func TestFaultyApiKey( t *testing.T) {
 	custom_header := http.Header{}
 	custom_header.Add("Authorization", "Bearer somerandomjunk")
 	_, err := auth.GetAPIKey(custom_header)
-	if err != nil {
+	if err == nil {
 		t.Errorf("%v", err)
 	}
 }
