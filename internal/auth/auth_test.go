@@ -1,7 +1,6 @@
 package auth
 
 import ("testing"
-"github.com/bootdotdev/learn-cicd-starter/internal/auth"
 //"errors"
 "net/http"
 //"strings"
