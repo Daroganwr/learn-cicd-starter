@@ -1,12 +1,13 @@
 package auth
 
-import ("testing"
-//"errors"
-"net/http"
-//"strings"
+import (
+	"testing"
+	// "errors"
+	"net/http"
+	// "strings"
 )
 
-func TestApiKey( t *testing.T) {
+func TestApiKey(t *testing.T) {
 	custom_header := http.Header{}
 	custom_header.Add("Authorization", "ApiKey somerandomjunk")
 	want := "somerandomjunk"
@@ -19,7 +20,7 @@ func TestApiKey( t *testing.T) {
 	}
 }
 
-func TestFaultyApiKey( t *testing.T) {
+func TestFaultyApiKey(t *testing.T) {
 	custom_header := http.Header{}
 	custom_header.Add("Authorization", "Bearer somerandomjunk")
 	_, err := GetAPIKey(custom_header)
