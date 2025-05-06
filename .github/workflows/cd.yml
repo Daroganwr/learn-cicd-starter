@@ -33,4 +33,4 @@ jobs:
         run: 'gcloud info'
 
       - name: 'Build docker image'
-        run: 'gcloud builds submit --tag  --tag us-central1-docker.pkg.dev/predictive-goal-459006-r0/notely-ar-repo/notely:latest .'   
+        run: 'gcloud builds submit --tag us-central1-docker.pkg.dev/predictive-goal-459006-r0/notely-ar-repo/notely:latest .'   
